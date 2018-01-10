@@ -3,3 +3,4 @@
 export(errorDisplay)
 export(ms2Plot)
 export(sxtSection)
+export(sxtSetwd)
