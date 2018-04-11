@@ -6,7 +6,8 @@
 \usage{
 sxtCorTest(x, alternative = c("two.sided", "less", "greater"),
   method = c("pearson", "kendall", "spearman"), exact = NULL,
-  conf.level = 0.95, continuity = FALSE)
+  conf.level = 0.95, continuity = FALSE, return.type = c("list",
+  "matrix"))
 }
 \arguments{
 \item{data}{A maxtrix or data.frame.}

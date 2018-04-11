@@ -9,8 +9,12 @@
 sxtCorTest <- function(x,
                        alternative = c("two.sided", "less", "greater"),
                        method = c("pearson", "kendall", "spearman"),
-                       exact = NULL, conf.level = 0.95, continuity = FALSE){
+                       exact = NULL, conf.level = 0.95, continuity = FALSE,
+                       return.type = c("list", "matrix")){
 
+  alternative <- match.arg(alternative)
+  method <- match.arg(method)
+  return.type <- match.arg(return.type)
 
   x <- apply(x, 2, list)
   x <- lapply(x, unlist)
@@ -23,8 +27,9 @@ sxtCorTest <- function(x,
     }))
   })
 
-  p <- do.call(rbind, p)
+  if(return.type != "list"){
+    p <- do.call(rbind, p)
+  }
 
   p
-
 }

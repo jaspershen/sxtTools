@@ -2,7 +2,10 @@
 
 export(dupSet)
 export(errorDisplay)
+export(installBioc)
 export(ms2Plot)
 export(sxtCorTest)
+export(sxtLength)
+export(sxtRSD)
 export(sxtSection)
 export(sxtSetwd)
