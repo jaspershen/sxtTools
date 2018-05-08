@@ -91,7 +91,7 @@ setGeneric(name = "keepOne",
                           according.to = c("mz.error", "rt.error")){
              according.to <- match.arg(according.to)
 if(is.null(result)) return(result)
-if(class(result) != "matrix" | class(result) != "data.frame") stop("result must be matrix or data.frame.")
+if(class(result) != "matrix" & class(result) != "data.frame") stop("result must be matrix or data.frame.")
              if(ncol(result) != 8) stop("result must from sxtMTmatch.")
              if(paste(colnames(result), collapse = ";") != "index1;index2;mz1;mz2;mz.error;rt1;rt2;rt.error"){
                stop("result must from sxtMTmatch.")
