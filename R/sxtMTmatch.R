@@ -64,13 +64,59 @@ setGeneric(name = "sxtMTmatch",
              result <- matrix(result[which(!apply(result,1,function(x) any(is.na(x)))),], ncol = 8)
              if(nrow(result) == 0) return(NULL)
              colnames(result) <-
-               c("Index1",
-                 "Index2",
+               c("index1",
+                 "index2",
                  "mz1",
                  "mz2",
-                 "mz error",
+                 "mz.error",
                  "rt1",
                  "rt2",
-                 "rt error")
-             result <- result
+                 "rt.error")
+
+             result <- as.data.frame(result)
            })
+
+
+#' @title keepOne
+#' @description Remove multiple vs. one in result from sxtMTmatch function.
+#' @author Xiaotao Shen
+#' \email{shenxt@@sioc.ac.cn}
+#' @param result result from sxtMTmatch function.
+#' @param according.to According to mz error or rt error?
+#' @return Return a result without multiple vs. one.
+#' @export
+
+setGeneric(name = "keepOne",
+           def = function(result,
+                          according.to = c("mz.error", "rt.error")){
+             according.to <- match.arg(according.to)
+if(is.null(result)) return(result)
+if(class(result) != "matrix" | class(result) != "data.frame") stop("result must be matrix or data.frame.")
+             if(ncol(result) != 8) stop("result must from sxtMTmatch.")
+             if(paste(colnames(result), collapse = ";") != "index1;index2;mz1;mz2;mz.error;rt1;rt2;rt.error"){
+               stop("result must from sxtMTmatch.")
+             }
+
+             duplicated.idx <- unique(result$index1[duplicated(result$index1)])
+             if(length(duplicated.idx) == 0) return(result)
+
+             for(i in 1:length(duplicated.idx)){
+               temp.idx <- which(result$index1 == duplicated.idx[i])
+               temp.result <- result[temp.idx,]
+               if(according.to == "mz.error") {
+                 temp.idx1 <- temp.idx[which.min(temp.result$mz.error)]
+                 temp.idx2 <- setdiff(temp.idx, temp.idx1)
+                 result <- result[-temp.idx2,]
+               }
+
+               if(according.to == "rt.error") {
+                 temp.idx1 <- temp.idx[which.min(temp.result$rt.error)]
+                 temp.idx2 <- setdiff(temp.idx, temp.idx1)
+                 result <- result[-temp.idx2,]
+               }
+
+             }
+
+             result <- result
+
+})
