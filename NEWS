@@ -1,7 +1,8 @@
 Version 0.99.0
 --------------
 o First release version
-o Add function keggOne for sxtMTmatch.
+o Add a function keggOne for sxtMTmatch.
+o Add a function removeIsotope.
 
 
 
