@@ -37,8 +37,8 @@ setGeneric(name = "ms2Plot", def = function(spectrum1,
                                             real.int.cutoff = 0,
                                             ppm.ms2match = 30,
                                             bty = "o",
-                                            xaxs = "i",
-                                            yaxs = "i",
+                                            xaxs = "r",
+                                            yaxs = "r",
                                             ...){
   if(missing(spectrum2)){
     spectrum1 <- as.data.frame(spectrum1)
