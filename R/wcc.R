@@ -1,5 +1,5 @@
 
-###code for WCC
+###code
 setwd("F:/wcc")
 # data <- readxl::read_excel("20180416 raft vs non-raft-2-181030.xlsx")
 data <- readr::read_csv("data.csv")
