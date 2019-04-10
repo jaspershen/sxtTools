@@ -64,9 +64,9 @@ sxtVolcanoPlot <- function(p.value,
     ggplot2::labs(title = title, x = xlab, y = ylab) +
     #legend
     # scale_color_discrete(name = legend.title, labels = legend.label) +
-    scale_color_manual(name = legend.title, labels = legend.label,
+    ggplot2::scale_color_manual(name = legend.title, labels = legend.label,
                        values = point.color) +
-    theme_bw() +
+    ggplot2::theme_bw() +
     #theme
     ggplot2::theme(
       plot.title = ggplot2::element_text(color="black", size = title.size,
