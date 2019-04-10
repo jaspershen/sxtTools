@@ -41,7 +41,7 @@ sxtVolcanoPlot <- function(p.value,
                            legend.title.size = 12,
                            legend.text.size = 10,
                            ...){
-
+  require(ggplot2)
   linetype <- match.arg(linetype)
   linetype <- as.numeric(linetype)
   diff <- rep(NA, length(p.value))
