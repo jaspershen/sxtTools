@@ -11,5 +11,5 @@ sxtSetwd.
 }
 \author{
 Xiaotao Shen
-\email{shenxt@sioc.ac.cn}
+\email{shenxt1990@163.com}
 }

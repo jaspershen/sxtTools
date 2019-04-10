@@ -4,8 +4,8 @@
 \alias{sxtMTmatch}
 \title{sxtMTmatch}
 \usage{
-sxtMTmatch(data1, data2, mz.tol, rt.tol = 30, rt.error.type = c("relative",
-  "abs"))
+sxtMTmatch(data1, data2, mz.tol, rt.tol = 30,
+  rt.error.type = c("relative", "abs"))
 }
 \arguments{
 \item{data1}{First data for matching, first column must be mz

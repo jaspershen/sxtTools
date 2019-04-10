@@ -1,21 +1,22 @@
 Package: sxtTools
 Type: Package
 Title: sxtTools
-Version: 0.99.0
-Date: 2018-01-06
+Version: 0.99.01
+Date: 2019-04-10
 Author: Xiaotao Shen
-Maintainer: Xiaotao Shen<shenxt@sioc.ac.cn>
-Description: Tools of SXT.
+Maintainer: Xiaotao Shen<shenxt1990@163.com>
+Description: Small tools of Xiaotao Shen.
 LazyData: true
 Depends: R (>= 3.0)
 Imports:
 License: GPL-2 | file LICENSE
 URL: https://github.com/jaspershen/sxtTools
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: knitr,
     rmarkdown,
     BiocStyle,
     RUnit,
-    BiocGenerics
+    BiocGenerics,
+    tidyverse,
+    ggplot2
 VignetteBuilder: knitr
-

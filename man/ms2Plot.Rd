@@ -5,9 +5,10 @@
 \title{ms2Plot}
 \usage{
 ms2Plot(spectrum1, spectrum2, col1 = "lightseagreen", col2 = "tomato",
-  col3 = "grey", xlim = NULL, lwd = 2, cex.lab = 1.8, cex.axis = 1.5,
-  xlab = "m/z", ylab = "Relative intensity", real.int.cutoff = 0,
-  ppm.ms2match = 30, bty = "o", xaxs = "i", yaxs = "i", ...)
+  col3 = "grey", xlim = NULL, lwd = 2, cex.lab = 1.8,
+  cex.axis = 1.5, xlab = "m/z", ylab = "Relative intensity",
+  real.int.cutoff = 0, ppm.ms2match = 30, bty = "o", xaxs = "r",
+  yaxs = "r", ...)
 }
 \arguments{
 \item{spectrum1}{Spectrum 1.}

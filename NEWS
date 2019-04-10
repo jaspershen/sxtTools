@@ -4,10 +4,11 @@ o First release version
 o Add a function keggOne for sxtMTmatch.
 o Add a function removeIsotope.
 
-Version 0.99.1
+Version 0.99.01 (20190410)
 --------------
 o First release version
 o Add a function, addSigline.
+o Add a function, sxtVolocanoPlot
 
 
 
