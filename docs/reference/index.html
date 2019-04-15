@@ -8,6 +8,13 @@
 
 <title>Function reference • sxtTools</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -28,6 +35,12 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script>
 
+
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
 <meta property="og:title" content="Function reference" />
@@ -73,7 +86,25 @@
   </a>
 </li>
 <li>
+  <a href="../articles/sxtTools.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/test/sxtTools.html">UNKNOWN TITLE</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -85,6 +116,12 @@
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
       
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -110,7 +147,355 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-build" class="hasAnchor"><a href="#section-build" class="anchor"></a>Build</h2>
+          <p class="section-desc"><p>Build a complete site or its individual section components.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="addSigline.html">addSigline()</a></code> </p>
+        </td>
+        <td><p>addSigline</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="correctRatio.html">correctRatio()</a></code> </p>
+        </td>
+        <td><p>correctRatio</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="decideCIE.html">decideCIE()</a></code> </p>
+        </td>
+        <td><p>decideCIE</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="dupSet.html">dupSet()</a></code> </p>
+        </td>
+        <td><p>dupSet</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="errorDisplay.html">errorDisplay()</a></code> </p>
+        </td>
+        <td><p>errordDisplay</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="installBioc.html">installBioc()</a></code> </p>
+        </td>
+        <td><p>installBioc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="keepOne.html">keepOne()</a></code> </p>
+        </td>
+        <td><p>keepOne</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ms2Plot.html">ms2Plot()</a></code> </p>
+        </td>
+        <td><p>ms2Plot</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="mseAnalysis.html">mseAnalysis()</a></code> </p>
+        </td>
+        <td><p>mseAnalysis</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="removeIsotope.html">removeIsotope()</a></code> </p>
+        </td>
+        <td><p>removeIsotope</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtCorTest.html">sxtCorTest()</a></code> </p>
+        </td>
+        <td><p>sxtCorTest</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtLength.html">sxtLength()</a></code> </p>
+        </td>
+        <td><p>sxtLength</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtMTmatch.html">sxtMTmatch()</a></code> </p>
+        </td>
+        <td><p>sxtMTmatch</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtRSD.html">sxtRSD()</a></code> </p>
+        </td>
+        <td><p>sxtRSD</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtScale.html">sxtScale()</a></code> </p>
+        </td>
+        <td><p>sxtScale</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSection.html">sxtSection()</a></code> </p>
+        </td>
+        <td><p>sxtSection</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSetwd.html">sxtSetwd()</a></code> </p>
+        </td>
+        <td><p>sxtSetwd</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtVolcanoPlot.html">sxtVolcanoPlot()</a></code> </p>
+        </td>
+        <td><p>sxtVolcanoPlot</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-templates" class="hasAnchor"><a href="#section-templates" class="anchor"></a>Templates</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="addSigline.html">addSigline()</a></code> </p>
+        </td>
+        <td><p>addSigline</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="correctRatio.html">correctRatio()</a></code> </p>
+        </td>
+        <td><p>correctRatio</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="decideCIE.html">decideCIE()</a></code> </p>
+        </td>
+        <td><p>decideCIE</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="dupSet.html">dupSet()</a></code> </p>
+        </td>
+        <td><p>dupSet</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="errorDisplay.html">errorDisplay()</a></code> </p>
+        </td>
+        <td><p>errordDisplay</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="installBioc.html">installBioc()</a></code> </p>
+        </td>
+        <td><p>installBioc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="keepOne.html">keepOne()</a></code> </p>
+        </td>
+        <td><p>keepOne</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ms2Plot.html">ms2Plot()</a></code> </p>
+        </td>
+        <td><p>ms2Plot</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="mseAnalysis.html">mseAnalysis()</a></code> </p>
+        </td>
+        <td><p>mseAnalysis</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="removeIsotope.html">removeIsotope()</a></code> </p>
+        </td>
+        <td><p>removeIsotope</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtCorTest.html">sxtCorTest()</a></code> </p>
+        </td>
+        <td><p>sxtCorTest</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtLength.html">sxtLength()</a></code> </p>
+        </td>
+        <td><p>sxtLength</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtMTmatch.html">sxtMTmatch()</a></code> </p>
+        </td>
+        <td><p>sxtMTmatch</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtRSD.html">sxtRSD()</a></code> </p>
+        </td>
+        <td><p>sxtRSD</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtScale.html">sxtScale()</a></code> </p>
+        </td>
+        <td><p>sxtScale</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSection.html">sxtSection()</a></code> </p>
+        </td>
+        <td><p>sxtSection</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSetwd.html">sxtSetwd()</a></code> </p>
+        </td>
+        <td><p>sxtSetwd</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtVolcanoPlot.html">sxtVolcanoPlot()</a></code> </p>
+        </td>
+        <td><p>sxtVolcanoPlot</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-helpers" class="hasAnchor"><a href="#section-helpers" class="anchor"></a>Helpers</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="addSigline.html">addSigline()</a></code> </p>
+        </td>
+        <td><p>addSigline</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="correctRatio.html">correctRatio()</a></code> </p>
+        </td>
+        <td><p>correctRatio</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="decideCIE.html">decideCIE()</a></code> </p>
+        </td>
+        <td><p>decideCIE</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="dupSet.html">dupSet()</a></code> </p>
+        </td>
+        <td><p>dupSet</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="errorDisplay.html">errorDisplay()</a></code> </p>
+        </td>
+        <td><p>errordDisplay</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="installBioc.html">installBioc()</a></code> </p>
+        </td>
+        <td><p>installBioc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="keepOne.html">keepOne()</a></code> </p>
+        </td>
+        <td><p>keepOne</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ms2Plot.html">ms2Plot()</a></code> </p>
+        </td>
+        <td><p>ms2Plot</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="mseAnalysis.html">mseAnalysis()</a></code> </p>
+        </td>
+        <td><p>mseAnalysis</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="removeIsotope.html">removeIsotope()</a></code> </p>
+        </td>
+        <td><p>removeIsotope</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtCorTest.html">sxtCorTest()</a></code> </p>
+        </td>
+        <td><p>sxtCorTest</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtLength.html">sxtLength()</a></code> </p>
+        </td>
+        <td><p>sxtLength</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtMTmatch.html">sxtMTmatch()</a></code> </p>
+        </td>
+        <td><p>sxtMTmatch</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtRSD.html">sxtRSD()</a></code> </p>
+        </td>
+        <td><p>sxtRSD</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtScale.html">sxtScale()</a></code> </p>
+        </td>
+        <td><p>sxtScale</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSection.html">sxtSection()</a></code> </p>
+        </td>
+        <td><p>sxtSection</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtSetwd.html">sxtSetwd()</a></code> </p>
+        </td>
+        <td><p>sxtSetwd</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxtVolcanoPlot.html">sxtVolcanoPlot()</a></code> </p>
+        </td>
+        <td><p>sxtVolcanoPlot</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-regression-tests" class="hasAnchor"><a href="#section-regression-tests" class="anchor"></a>Regression tests</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -230,7 +615,10 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-build">Build</a></li>
+      <li><a href="#section-templates">Templates</a></li>
+      <li><a href="#section-helpers">Helpers</a></li>
+      <li><a href="#section-regression-tests">Regression tests</a></li>
     </ul>
   </div>
 </div>
@@ -247,6 +635,23 @@
    </div>
 
   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script>
+<script>
+  docsearch({
+    
+    
+    apiKey: 'fbd8d79ed49f21fc9ca7b2cf601a3f5b',
+    indexName: 'pkgdown',
+    inputSelector: 'input#search-input.form-control',
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
+  });
+</script>
+
 
   </body>
 </html>
