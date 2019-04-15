@@ -1,5 +1,7 @@
 #' @title installBioc
 #' @description Install packages from Bioconductor.
+#' @author Xiaotao Shen
+#' \email{shenxt1990@@163.com}
 #' @param package The package name from Bioconductor.
 #' @param ... Other parameters. See ?biocLite
 #' @author Xiaotao Shen

@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^sxtTools\.Rcheck$
+^sxtTools.*\.tar\.gz$
+^sxtTools.*\.tgz$
