@@ -16,4 +16,7 @@ Install packages from Bioconductor.
 }
 \author{
 Xiaotao Shen
+\email{shenxt1990@163.com}
+
+Xiaotao Shen
 }
