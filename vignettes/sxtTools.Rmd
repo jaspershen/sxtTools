@@ -9,8 +9,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<img src = "http://oy0flpoi6.bkt.clouddn.com/MetDNA.logo2.png" class = "img-topic" width = "800" align="middle" />
-
 <h1>**Instruction of MetDNA (version 0.99.13)**</h1>
 <h3>**Xiaotao Shen, Zhengjiang Zhu**</h3>
 <h3>`r format(Sys.Date())`</h3>

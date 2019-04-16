@@ -1,212 +1,135 @@
-# pkgdown 1.3.0.9000 (development version)
-
-* A default 404 page (`404.html`) is built from content in `.github/404.md` (#947).
-
-* Updated fontawesome to 5.7.1. [fontawesome 5 deprecated the `fa` prefix style](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use),
-  so fontawesome users need to migrate their icons from `fa fa-home` to `fas fa-home`. Note
-  that brands now have a separate prefix (`fab fa-github`) (#953).
-
-* Optionally, opt of out of installation in `deploy_site_github()`
-
-* `\tabular{}` conversion better handles code (@mitchelloharawild, #978).
-
-# pkgdown 1.3.0
-
-* Restore accidentally deleted `build_logo()` function so that logos
-  are once more copied to the website.
-
-* Fix to `pkgdown.css` so page header has correct amount of top margin.
-
-* `content-home.html` template is no longer used when the homepage
-  is an `.Rmd` (Reverts #834. Fixes #927, #929)
-
-* `deploy_site_github()` now passes parameters to `build_site()` 
-  (@noamross, #922), and the documentation gives slightly better advice.
-
-* Correct off-by-one error in navbar highlighting javascript; now no navbar
-  is highlighted if none match the current path (#911).
-
-* Tweaking of HTML table classes was fixed (@yonicd, #912)
-
-* Restore accidentally removed `docsearch.css` file.
-
-# pkgdown 1.2.0
-
-## New features
-
-* `deploy_site_github()` can be used from continuous intergration systems
-  (like travis) to automatically deploy your package website to GitHub Pages.
-  See documentation for how to set up details (@jimhester).
-
-* `build_favicon()` creates high resolution favicons from the package logo,
-  and saves them in `pkgdown/`. They are created using the 
-  <http://realfavicongenerator.net> API, and are better suited for modern web 
-  usage (e.g. retina display screens, desktop shortcuts, etc.). This also 
-  removes the dependency on the magick package, making automated deployment
-  a little easier (@bisaloo, #883).
-
-* Users with limited internet connectivity can explicitly disable internet
-  usage by pkgdown by setting `options(pkgdown.internet = FALSE)` (#774, #877).
-
-## Improvements to Rd translation
-
-* `rd2html()` is now exported to facilitate creation of translation reprexes.
-
-* `\Sexpr{}` conversion supports multiple arguments, eliminating 
-  `x must be a string or a R connection` errors when using `\doi{}` (#738).
-
-* `\tabular{}` conversion better handles empty cells (#780).
-
-* `\usage{}` now supports qualified functions eliminating  
-  `Error in fun_info(x) : Unknown call: ::` errors (#795).
-
-* Invalid tags now generate more informative errors (@BarkleyBG, #771, #891)
-
-## Front end
-
-* The default footer now displays the version of pkgdown used to build 
-  the site (#876). 
-
-* All third party resources are now fetched from a single CDN and are
-  give a SRI hash (@bisaloo, #893).
-  
-* The navbar version now has class "version" so you can more easily control 
-  its display (#680).
-
-* The default css has been tweaked to ensure that icons are visible on all
-  browsers (#852).
-
-## Bug fixes and minor improvements
-
-### Home page
-
-* Can now build sites for older packages that don't have a `Authors@R` field 
-  (#727).
-
-* Remote urls ending in `.md` are no longer tweaked to end in `.html` (#763).
-
-* Bug report link is only shown if there's a "BugReports" field (#855).
-
-* `content-home.html` template is now used when the homepage is an `.Rmd` 
-  (@goldingn, #787).
-
-* A link to the source `inst/CITATION` was added to the authors page (#714).
-
-### News
-
-* Uses stricter regular expression when linking to GitHub authors (#902).
-
-### Reference
-
-* Unexported functions and test helpers are no longer loaded (#789).
-  
-* Selectors that do not match topics now generate a warning. If none of the 
-  specified selectors have a match, no topics are selected (#728).
-
-### Articles
-
-* The display depth of vignette tables of contents can be configured by 
-  setting `toc: depth` in `_pkgdown.yml` (#821):
-
-  ```yaml
-  toc:
-    depth: 2
-  ```
-
-### Overall site
-
-* `init_site()` now creates a CNAME file if one doesn't already exist and the
-  site's metadata includes a `url` field.
-
-* `build_site()` loses vestigal `mathjax` parameter. This didn't appear to do 
-  anything and  no one could remember why it existed (#785).
-
-* `build_site()` now uses colors even if `new_process = TRUE` (@jimhester).
-
-# pkgdown 1.1.0
-
-## New features
-
-* `build_reference()` and `build_site()` get new `document` argument. When 
-  `TRUE`, the default, will automatically run `devtools::document()` to 
-  ensure that your documentation is up to date.
-
-* `build_site()` gains a `new_process` argument, which defaults to `TRUE`.
-  This will run pkgdown in a separate process, and is recommended practice
-  because it improves reproducibility (#647).
-
-* Improved display for icons: icons must be 30px and stored in top-level 
-  `icons/` directory. They are embedded in a separate column of reference 
-  index table, instead of being inside a comment (!) (#607).
-  
-## Front end
-
-* Added a keyboard shortcut for searching. Press `shift` + `/` (`?`) to move 
-  focus to the search bar (#642). 
-  
-* The Algolia logo is correctly shown in the search results (#673).
- 
-* Navbar active tab highlighting uses a superior approach (suggested by 
-  @jcheng5) which should mean that the active page is correctly highlighted
-  in all scenarios (#660).
-
-* `pkgdown.js` is better isolated so it should still work even if you 
-  load html widgets that import a different version of jquery (#655).
-
-## Improvements to Rd translation
-
-* `vignette()` calls that don't link to existing vignettes silently fail 
-  to link instead of generating an uninformative error messages (#652). 
-  Automatic linking works for re-exported objects that are not functions 
-  (@gaborcsardi, #666).
-
-* Empty `\section{}`s are ignored (#656). Previously, empty sections caused 
-  error `Error in rep(TRUE, length(x) - 1)`.
-
-* `\Sexpr{}` supports `results=text`, `results=Rd` and `results=hide` (#651).
-
-* `\tabular{}` no longer requires a terminal `\cr` (#664, #645).
-
-## Minor bug fixes and improvements
-
-* Add `inst/pkgdown.yml` as a possible site configuration file so that packages 
-  on CRAN can be built without needing the development version (#662).
-
-* Default navbar template now uses site title, not package name (the package 
-  name is the default title, so this will not affect most sites) (#654).
-
-* You can suppress indexing by search engines by setting `noindex: true` 
-  `pkgdown.yml` (#686)
-  
-    ```yaml
-    template:
-      params:
-        noindex: true
-    ```
-
-* `build_article()` sets `IN_PKGDOWN` env var so `in_pkgdown()` works 
-  (#650).
-
-* `build_home()`: CITATION files with non-UTF-8 encodings (latin1) work
-  correctly, instead of generating an error. For non-UTF-8 locales, ensure you 
-  have e.g. `Encoding: latin1` in your `DESCRIPTION`; but best practice is to 
-  re-enode your CITATION file to UTF-8 (#689).
-
-* `build_home()`: Markdown files (e.g., `CODE_OF_CONDUCT.md`) stored in 
-  `.github/` are copied and linked correctly (#682).
-
-* `build_news()`: Multi-page changelogs (generated from `NEWS.md` with
-  `news: one_page: false` in `_pkgdown.yml`) are rendered correctly.
-
-* `build_reference()`: reference index shows infix functions (like `%+%`) as 
-  `` `%+%` ``, not `` `%+%`() `` on  (#659).
-
-# pkgdown 1.0.0
-
-* Major refactoring of path handling. `build_` functions no longer take
-  `path` or `depth` arguments. Instead, set the `destination` directory 
-  at the top level of `pkgdown.yml`.
-
-* Similarly, `build_news()` no longer takes a `one_page` argument;
-  this should now be specified in the `_pkgdown.yml` instead. See the 
-  documentation for an example.
+# Version 0.99.0
+--------------
+* First release version
+* Fix bugs.
+
+# Version 0.99.01
+--------------
+* Change some compounds whose formulas contain "X" or "R" in KEGG database (20170811).
+
+# Version 0.99.02
+--------------
+* Change analysisReport function.
+* Change the output files.
+* Add use.default.md parameter in metABM function.
+* Fix some bugs.
+
+# Version 0.99.04
+--------------
+* Fix bugs in metModule and metModule2 when there are no mosules with p values less than 0.05.
+* Fix bugs in analysisReport when there are no mosules with p values less than 0.05.
+
+# Version 0.99.05
+--------------
+* New feature: Only use MRN based annotations for dysregulated network analysis.
+* New feature: Use annotations of dysregulated peaks for pathway enrichment.
+* Combine some functions as one R file.
+* Fix bugs in findPathway and findPathway2.
+* Fix bugs in tools.
+
+# Version 0.99.06
+--------------
+* Fix some bugs in singleTransformation.
+* Fix a bugs in analysisReport.
+* Fix bugs in some functions which select some columns from a data frame or matrix.
+* Fix bugs in heat map when module or pathway sample have less than two variables.
+
+# Version 0.99.07
+--------------
+* Fix bug in metAnnotation: One peak should not be used to annotate itself.
+* Fix bugs in ppm calculation: if m/z less than 400 Da, the difference of m/z should be divided by 400.
+* New feature: Output MS/MS matching spectra between seed and neighbor.
+* New feature: In MetDNA: If ms2.match.annotation.result.csv exist, set ms2.annotation as FALSE. If MRN.annotation.result.csv exist, set mrn.annotation as FALSE.
+
+# Version 0.99.10
+--------------
+* Fix bug in ms2Annotation: Change the default molecular descriptors for RT prediction in RP model.
+* Close the dysregulated pathway analysis in metPathway.
+* Rearrange the output results of dysregulated network analysis.
+* Combine metModule and metModule2 function. So positive, negative or both can be completed in one function.
+* Fix the bugs when p value is NA and fold change is NA or infinite.
+* Fix a bug in groupRT function.
+* Fix a bug in metModule function.
+
+# Version 0.99.11
+--------------
+* New feature: Use the annotations of dysregulated for pathway enrichment analysis. The users can also provide the markers which you select by your methods. The markers file should be named as "marker.csv" and placed in "POS" or "NEG" folder. The marker only contain two columns, first column is "peak.name" and second column is "KEGG.ID", and if one peak matches multiple annotations, the KEGG IDs should be seperated using semicolon ";".
+* Dysregulated network is set FALSE by default.
+* Pathway enrichment analysis is set TRUE by default if polarity is "both", and FALSE if polarity is "positive" or "negative".
+* New feature: You can give remain.idx in the directory.
+* Fix a fetal bug in readAnnotation.
+* Fix a bug when msp data is from MetAnalyzer (20171029).
+* Fix a bug in pathway quantitative analysis (20171107).
+* New feature: metabolite quantitative, use all identification result; pathway quantitative, use the dysregulated metabolite.
+
+# Version 0.99.12
+--------------
+* New feature: User can use MetDNA function to process positive and negative in one run.
+* New feature: The run log is outputed as txt.
+* Fix a bug in uniTest.
+* Fix a bug in isotopeAnnotation when peak intensity is 0.
+* New feature: Add two new arguments. 1. ms2.match.plot, default is TRUE, output MS/MS spectral match plot or not in MS2 match identification. 2. seed.neighbor.match.plot, default is FALSE, output MS/MS spectral match plot between seed and neighbor or not.
+* Fix a bug when the sample name starts with a number.
+* Fix a bug when the users change the data.csv to do pathway enrichment analysis.
+* Fix a bug in analysisReport.
+* New feature: The parameters can be direct from MetDNA.paramters.csv using the new argument: parameter (20171220).
+
+# Version 0.99.13
+--------------
+* A new argument, instrument is added. It can be set as AgilentQTOF, SciexTripleTOF, other QTOF and ThermoOrbitrap.
+
+# Version 0.99.14
+--------------
+* Fix a bug when there are only one sample in one group.
+
+# Version 0.99.15
+--------------
+* Fix a bug in analysisGeneration.
+
+# Version 0.99.16
+--------------
+* Add P-values to Quantitative.pathway.metabolite.result.csv.
+* Re-orginize the analysis results.
+* Remove the MS2_match_results.
+
+# Version 1.0.0
+--------------
+* The First open release version.
+
+# Version 1.0.1
+--------------
+* Fix a bugs: When number of dysregulated peaks is less than 10, give a warning.
+
+# Version 1.0.2
+--------------
+* Revision for comments of reviewers from Nature methods.
+* Pathway overview, change FDR to p value.
+* A new paramter, candidate.num is added to control how many candidate for peaks are outputted. Default is 3.
+* Fix a small bug in readAnnotation function.
+* The weights have been optimized and changed for metabolite and adduct annotation.
+* Change the score cutoff as 0.4 for identifications and identifications.
+* Fix a small bug in metdnaFor2Mode.
+* Fix a small bug in analysisGeneration.
+* The name of package is temporarily changed to MetDNA102.
+* The "Glycolysis / Gluconeogenesis" pathway in fruit fly is removed a metablites.
+
+# Version 1.0.3
+--------------
+* Release version.
+* Add README file.
+* The default candidate number of peaks are used for anywhere, such as pathway enrichment, data output and report.
+
+# Version 1.1
+--------------
+* Release version.
+* Add README file.
+* Fixed a small bug.
+* Add a sample.name check in dataCheck function.
+
+# Version 1.1.1
+--------------
+* Fixed a small bug, when all the intentsity are same in all samples.
+
+# Version 1.1.2
+--------------
+* Fixed a small bug, when there is no marker with ID for pathway enrichment.

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sxtTools • sxtTools</title>
+<title>All the usefull tools from Xiaotao Shen • sxtTools</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><!-- docsearch --><script src="docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
 <link href="docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="sxtTools">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="All the usefull tools from Xiaotao Shen">
 <meta property="og:description" content="Small tools of Xiaotao Shen.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -106,39 +106,17 @@
 <a href="#sxttools" class="anchor"></a>sxtTools <img src="../../my%20github/sxtTools/figures/logo.png" align="right" alt="" width="120">
 </h1></div>
 
-<p>pkgdown is designed to make it quick and easy to build a website for your package. You can see pkgdown in action at <a href="https://pkgdown.r-lib.org" class="uri">https://pkgdown.r-lib.org</a>: this is the output of pkgdown applied to the latest version of pkgdown. Learn more in <code>vignette("pkgdown")</code> or <code>?build_site</code>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Install development version from GitHub</span></a>
-<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"r-lib/pkgdown"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"jaspershen/sxtTools"</span>)</a></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Run pkgdown from the package directory each time you release your package:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">pkgdown<span class="op">::</span><span class="kw"><a href="https://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span>()</a></code></pre></div>
-<p>This will generate a <code>docs/</code> directory. The home page will be generated from your package’s <code>README.md</code>, and a function reference will be generated from the documentation in the <code>man/</code> directory. If you are using GitHub, the easiest way to make this your package website is to check into git, then go to settings for your repo and make sure that the <strong>GitHub pages</strong> source is set to “master branch /docs folder”. Be sure to update the URL on your github repository homepage so others can easily navigate to your new site.</p>
-<p>To customise your site, create <code>_pkgdown.yml</code> and modify it <a href="http://pkgdown.r-lib.org/articles/pkgdown.html">as described in the documentation</a>. You can also use <code>pkgdown/_pkgdown.yml</code> if you need other files to customise your site.</p>
-<p>The package includes an RStudio add-in that you can bind to a keyboard shortcut. I recommend <code>Cmd</code> + <code>Shift</code> + <code>W</code>: it uses <code>Cmd</code> + <code>Shift</code>, like all other package development shortcuts, it replaces a rarely used command (close all tabs), and the <code>W</code> is a mnemonic for website.</p>
-</div>
-<div id="in-the-wild" class="section level2">
-<h2 class="hasAnchor">
-<a href="#in-the-wild" class="anchor"></a>In the wild</h2>
-<p>At last count, pkgdown is used <a href="https://github.com/search?o=desc&amp;q=pkgdown.css+in%3Apath+path%3Adocs&amp;s=indexed&amp;type=Code">by over 3000 packages</a>.</p>
-<p>Here are a few examples created by contributors to pkgdown:</p>
-<ul>
-<li><p><a href="http://mc-stan.org/bayesplot/index.html">bayesplot</a> [<a href="https://github.com/stan-dev/bayesplot/tree/gh-pages">source</a>]: plotting functions for posterior analysis, model checking, and MCMC diagnostics.</p></li>
-<li><p><a href="https://valr.hesselberthlab.org/">valr</a> [<a href="https://github.com/rnabioco/valr">source</a>]: read and manipulate genome intervals and signals.</p></li>
-<li><p><a href="http://jranke.github.io/mkin/">mkin</a> [<a href="https://github.com/jranke/mkin">source</a>]: calculation routines based on the FOCUS Kinetics Report</p></li>
-<li><p><a href="http://renozao.github.io/NMF/master/index.html">NMF</a> [<a href="https://github.com/renozao/NMF">source</a>]: a framework to perform non-negative matrix factorization (NMF).</p></li>
-</ul>
-<p>Comparing the source and output of these sites is a great way to learn new pkgdown techniques.</p>
-</div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of conduct</h2>
-<p>Please note that this project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
@@ -163,7 +141,7 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="http://shenxt.me/">Xiaotao Shen</a> <br><small class="roles"> Maintainer </small>  </li>
+<a href="http://shenxt.sxl.cn/">Xiaotao Shen</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9608-9964" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
 </ul>
 </div>
 
@@ -183,7 +161,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://shenxt.me/">Xiaotao Shen</a>.</p>
+  <p>Developed by <a href="http://shenxt.sxl.cn/">Xiaotao Shen</a>.</p>
 </div>
 
 <div class="pkgdown">

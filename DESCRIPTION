@@ -1,9 +1,12 @@
 Package: sxtTools
-Type: Package
-Title: sxtTools
+Title: All the usefull tools from Xiaotao Shen
 Version: 0.99.01
 Date: 2019-04-10
-Author: Xiaotao Shen
+Authors@R: c(
+    person("Xiaotao", "Shen", , "shenxt1990@163.com", role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0002-9608-9964")
+    )
+    )
 Maintainer: Xiaotao Shen<shenxt1990@163.com>
 Description: Small tools of Xiaotao Shen.
 LazyData: true
