@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pkgdown.r-lib.org/index.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//index.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/addSigline.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/addSigline.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/correctRatio.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/correctRatio.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/decideCIE.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/decideCIE.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/dupSet.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/dupSet.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/errorDisplay.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/errorDisplay.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/installBioc.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/installBioc.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/keepOne.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/keepOne.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/ms2Plot.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/ms2Plot.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/mseAnalysis.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/mseAnalysis.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/removeIsotope.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/removeIsotope.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtCorTest.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtCorTest.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtLength.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtLength.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtMTmatch.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtMTmatch.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtRSD.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtRSD.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtScale.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtScale.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtSection.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtSection.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtSetwd.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtSetwd.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/reference/sxtVolcanoPlot.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//reference/sxtVolcanoPlot.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/articles/sxtTools.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//articles/sxtTools.html</loc>
   </url>
   <url>
-    <loc>https://pkgdown.r-lib.org/articles/test/sxtTools.html</loc>
+    <loc>https://jaspershen.github.io/sxtTools//articles/test/sxtTools.html</loc>
   </url>
 </urlset>

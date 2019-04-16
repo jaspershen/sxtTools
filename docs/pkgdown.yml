@@ -5,6 +5,6 @@ articles:
   sxtTools: sxtTools.html
   sxtTools: test/sxtTools.html
 urls:
-  reference: https://pkgdown.r-lib.org/reference
-  article: https://pkgdown.r-lib.org/articles
+  reference: https://jaspershen.github.io/sxtTools//reference
+  article: https://jaspershen.github.io/sxtTools//articles
 

@@ -1,22 +1,22 @@
 {
-  "index_name": "pkgdown",
+  "index_name": "jaspershen-sxttools",
   "start_urls": [
     {
-      "url": "https://pkgdown.r-lib.org/index.html",
+      "url": "https://jaspershen.github.io/sxtTools//index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "https://pkgdown.r-lib.org/reference",
+      "url": "https://jaspershen.github.io/sxtTools//reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "https://pkgdown.r-lib.org/articles",
+      "url": "https://jaspershen.github.io/sxtTools//articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "https://pkgdown.r-lib.org/sitemap.xml"
+    "https://jaspershen.github.io/sxtTools//sitemap.xml"
   ],
   "selectors": {
     "homepage": {
