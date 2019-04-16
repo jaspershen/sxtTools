@@ -13,7 +13,7 @@
 #' @export
 
 
-setGeneric(name = "sxtMTmatch",
+setGeneric(name = "SXTMTmatch",
            def = function(data1,
                           data2,
                           mz.tol,
@@ -64,16 +64,15 @@ setGeneric(name = "sxtMTmatch",
              result <- matrix(result[which(!apply(result,1,function(x) any(is.na(x)))),], ncol = 8)
              if(nrow(result) == 0) return(NULL)
              colnames(result) <-
-               c("index1",
-                 "index2",
+               c("Index1",
+                 "Index2",
                  "mz1",
                  "mz2",
-                 "mz.error",
+                 "mz error",
                  "rt1",
                  "rt2",
-                 "rt.error")
-
-             result <- as.data.frame(result)
+                 "rt error")
+             result <- result
            })
 
 
