@@ -13,7 +13,7 @@
 #' @export
 
 
-setGeneric(name = "SXTMTmatch",
+setGeneric(name = "sxtMTmatch",
            def = function(data1,
                           data2,
                           mz.tol,
