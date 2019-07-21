@@ -1,0 +1,146 @@
+---
+title: "R语言stringr包的使用2"
+output:
+  html_notebook: default
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+### 昨天剑哥说要不要写一下关于正则表达式的内容，今天看书就正好看到这一章。R for data science总体上感觉讲解的还不是特别详细，我总体按照书来写，有想要深入学习的同学，可以去google搜索，非常多好的内容。
+
+同样，先先加载包
+
+```{r, eval=TRUE}
+library(tidyverse)
+library(stringr)
+```
+
+### 1基础匹配
+
+我们先来看一个例子。 用`stringr`包中的`str_view`函数来看一下匹配的含义。
+
+```{r, eval=TRUE}
+x <- c("apple", "banana", "pear")
+str_view(string = x, pattern = "an")
+```
+
+可以看到该函数将字符串中含有`an`的对象`banana`找出来了。这可以算作是精确匹配，那么如果我们想要匹配的是符合一定规律的怎么办呢？比如想要匹配中间为字母a，前后为任意字符皆可。这就用到正则表达式了，维基百科定义如下：
+
+>正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE），又称正规表示、正规表示法、正规表达式、规则表达式、常规表示法，是计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些匹配某个模式的文本。
+
+比如刚才的例子，就可以这么写：
+
+```{r, eval=TRUE}
+x <- c("apple", "banana", "pear")
+str_view(string = x, pattern = ".a.")
+```
+
+其中的"."，就代表着任意字符，注意任意，也就是不管是字母，数字，符号，空格等等，都是可以的。但是问题来了，如果我们需要的是精确匹配"."本身呢，这时候需要使用反斜杠 “\\”对其进行转义，这时候正字表达式就不会将其视作广义的代表，而是该字符本身了。但是因为`\`本身在正则表达式中也有其特殊含义，因此他也需要一个反斜杠对其进行转义，也就是说，如果我们想匹配`.`，我们需要这么写，`\\.`，也就是两个反斜杠。我们举个例子：
+
+```{r, eval=TRUE}
+x <- c("abc", "a.c", "bef")
+str_view(string = x, pattern = "a\\.c")
+```
+
+可以看到这样就可以把点本身精确匹配到了。
+
+那么如果想要匹配`\``本身呢？需要4个反斜杠。。。因为首先反斜杠出现在字符串中就需要对其进行转义，也就是说表示为一个反斜杠就需要2个，所以，最后就出现了四个反斜杠。另外，最近在看python，python中有原生字符串的概念，所以对于出现反斜杠的字符串，可以直接使用r，就不怕漏掉反斜杠了。
+
+```{r, eval=TRUE}
+x <- "a\\b"
+writeLines(x)
+#> a\b
+str_view(string = x, pattern = "\\\\")
+```
+
+那么如果要匹配`"'\`，该怎么写呢？例子如下：
+
+```{r, eval=TRUE}
+x <- "aa\"\'\\"
+writeLines(x)
+#> a\b
+str_view(string = x, pattern = "\"\'\\\\")
+```
+
+### 2固定位置进行匹配
+
+比如你想匹配开头或者结尾为固定内容的对象，在正则表达式中，也有固定符号进行表示。
+
+* `^`表示开头。
+* `$`表示结尾。
+
+匹配以字母`a`开头的对象：
+
+```{r, eval=TRUE}
+x <- c("apple", "banana", "pear")
+str_view(string = x, pattern = "^a")
+```
+
+匹配以字母`a`结尾的对象：
+
+```{r, eval=TRUE}
+x <- c("apple", "banana", "pear")
+str_view(string = x, pattern = "a$")
+```
+
+注意两个符合的位置。
+
+如果想要精确匹配某个字符，这两个特殊夫就非常有用了：
+
+```{r, eval=TRUE}
+x <- c("apple pie", "apple", "apple cake")
+str_view(string = x, pattern = "apple")
+str_view(string = x, pattern = "^apple$")
+```
+
+如果想要精确匹配对象`$^$`，那么该怎么写呢？
+
+```{r, eval=TRUE}
+x <- c("$^$", "apple", "$^$a")
+str_view(string = x, pattern = "\\$\\^\\$$")
+```
+
+`string`包中有一个单词库，我们可以用它来联系一下，比如，匹配该单词库中所有以`x`开头的单词：
+
+```{r, eval=TRUE}
+x <- stringr::words
+str_view(string = x, pattern = "^x", match = TRUE)
+```
+
+
+匹配所有以`y`结尾的单词：
+
+```{r, eval=TRUE}
+x <- stringr::words
+str_view(string = x, pattern = "y$", match = TRUE)
+```
+
+匹配所有长度为3的对象，注意不可以使用`str_length`函数
+
+```{r, eval=TRUE}
+x <- stringr::words
+str_view(string = x, pattern = "^...$", match = TRUE)
+```
+
+匹配所有长度为7及以上的对象，注意同样不可以使用`str_length`函数
+
+```{r, eval=TRUE}
+x <- stringr::words
+str_view(string = x, pattern = "^.......", match = TRUE)
+```
+
+
+### 特殊字符
+
+从上面可以看出来，其实正则表达式就是特殊字符的组合，用来表示符合规定的对象，因此特殊字符就尤为重要，我们下面来看看都有哪些特殊字符。
+
+* `\d`：表示任意数字，d就是digit的意思。
+* `\s`：表示任意空白，比如空格，tab等。
+* `[abc]`：中括号将里面包含的内容，表示任意一个即可，比如`[abc]`代表的就是a，b或者c。
+* `[^abc]`：这表示的是除了a，b和c之外的任意字符。
+
+同样的，记住，只要反斜杠出现，就要同时出现两个。
+
+写到这里，电脑没电了，又忘了带带能源，那就正好明天一起，把特殊字符写完。

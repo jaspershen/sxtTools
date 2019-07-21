@@ -118,6 +118,115 @@ setGeneric(name = "annotateMS2",
 
 
 
+#' @title ms2Plot2
+#' @description Plot ms2 spectrum.
+#' @author Xiaotao Shen
+#' \email{shenxt@@sioc.ac.cn}
+#' @param spectrum1 Spectrum 1.
+#' @param spectrum2 Spectrum 2.
+#' @param range.mz range.mz
+#' @param ppm.tol ppm.tol
+#' @param mz.ppm.thr mz.ppm.thr
+#' @param xlab xlab.
+#' @param ylab ylab.
+#' @param col1 Color 1.
+#' @param col2 Color 2.
+#' @param title.size title.size
+#' @param axis.text.size axis.text.size.
+#' @param real.int.cutoff real.int.cutoff.
+#' @param legend.title.size legend.title.size
+#' @param legend.text.size legend.text.size
+#' @return Return a MS2 spectrum.
+#' @export
+setGeneric(name = "ms2Plot2",
+           def = function(spectrum1,
+                          spectrum2,
+                          range.mz,
+                          ppm.tol = 30,
+                          mz.ppm.thr = 400,
+                          xlab = "Mass to charge ratio (m/z)",
+                          ylab = "Relative intensity",
+                          col1 = "red",
+                          col2 = "black",
+                          title.size = 15,
+                          lab.size = 15,
+                          axis.text.size =15,
+                          legend.title.size = 15,
+                          legend.text.size = 15
+           ){
+             spectrum1[,1] <- as.numeric(spectrum1[,1])
+             spectrum1[,2] <- as.numeric(spectrum1[,2])
+
+             spectrum2[,1] <- as.numeric(spectrum2[,1])
+             spectrum2[,2] <- as.numeric(spectrum2[,2])
+
+             spectrum1[,2] <- spectrum1[,2]/max(spectrum1[,2])
+             spectrum2[,2] <- spectrum2[,2]/max(spectrum2[,2])
+
+             spectrum1 <- as.data.frame(spectrum1)
+             spectrum2 <- as.data.frame(spectrum2)
+
+             if(missing(range.mz)){
+               range.mz <- c(min(spectrum1[,1], spectrum2[,1]),
+                             max(spectrum1[,1], spectrum2[,1]))
+
+             }
+
+             matched.spec <- tinyTools::ms2Match(spectrum1,
+                                                 spectrum2,
+                                                 ppm.tol = ppm.tol,
+                                                 mz.ppm.thr = mz.ppm.thr)
+             matched.idx <- which(matched.spec[, "Lib.intensity"] > 0 &
+                                    matched.spec[, "Exp.intensity"] > 0)
+             require(ggplot2)
+             plot <- ggplot(matched.spec) +
+               geom_segment(mapping = aes(x = Exp.mz, y = Exp.intensity - Exp.intensity,
+                                          xend = Exp.mz, yend = Exp.intensity),
+                            colour = col2) +
+               geom_point(data = matched.spec[matched.idx,,drop = FALSE],
+                          mapping = aes(x = Exp.mz, y = Exp.intensity), colour = col2) +
+               xlim(range.mz[1], range.mz[2]) +
+               ylim(-1, 1) +
+               labs(x = xlab, y = ylab) +
+               theme_bw() +
+               theme(
+                 # axis.line = element_line(arrow = arrow()),
+                 plot.title = element_text(color = "black", size = title.size,
+                                           face = "plain",
+                                           hjust = 0.5),
+                 axis.title = element_text(color = "black", size = lab.size,
+                                           face = "plain"),
+                 axis.text = element_text(color = "black", size = axis.text.size,
+                                          face = "plain"),
+                 legend.title = element_text(color = "black", size = legend.title.size,
+                                             face = "plain"),
+                 legend.text = element_text(color = "black", size = legend.text.size,
+                                            face = "plain")
+               )
+
+             plot <- plot +
+               annotate(geom = "text", x = Inf, y = Inf,
+                        label = "Spectrum 1",
+                        color = col2,
+                        hjust = 1, vjust = 1) +
+               annotate(geom = "text", x = Inf, y = -Inf,
+                        label = "Spectrum 2",
+                        color = col1,
+                        hjust = 1, vjust = -1)
+
+             plot <- plot +
+               geom_segment(data = matched.spec,
+                            mapping = aes(x = Lib.mz, y = Lib.intensity - Lib.intensity,
+                                          xend = Lib.mz, yend = -Lib.intensity),
+                            colour = col1) +
+               geom_point(data = matched.spec[matched.idx, , drop = FALSE],
+                          mapping = aes(x = Lib.mz, y = -Lib.intensity), colour = col1)
+             plot
+           })
+
+
+
+
 
 
 
