@@ -4,9 +4,12 @@
 \alias{mseAnalysis}
 \title{mseAnalysis}
 \usage{
-mseAnalysis(metabolite.id, species = c("hsa", "dme", "mmu", "rat", "bta",
-  "gga", "dre", "cel", "sce", "ath", "smm", "pfa", "tbr", "eco", "ppu",
-  "syf"), test.method = c("hypergeometric", "fisher"))
+mseAnalysis(
+  metabolite.id,
+  species = c("hsa", "dme", "mmu", "rat", "bta", "gga", "dre", "cel", "sce", "ath",
+    "smm", "pfa", "tbr", "eco", "ppu", "syf"),
+  test.method = c("hypergeometric", "fisher")
+)
 }
 \arguments{
 \item{metabolite.id}{The vector of metabolite IDs.}

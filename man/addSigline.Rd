@@ -4,10 +4,17 @@
 \alias{addSigline}
 \title{addSigline}
 \usage{
-addSigline(point.left.up = c(1, 100), point.right.up = c(2, 100),
-  point.left.bottom = c(1, 50), point.right.bottom = c(2, 50),
-  line.width = 0.5, lwd = 1, sig.label = "***", n.y = 1.01,
-  cex = 1.3)
+addSigline(
+  point.left.up = c(1, 100),
+  point.right.up = c(2, 100),
+  point.left.bottom = c(1, 50),
+  point.right.bottom = c(2, 50),
+  line.width = 0.5,
+  lwd = 1,
+  sig.label = "***",
+  n.y = 1.01,
+  cex = 1.3
+)
 }
 \arguments{
 \item{point.left.up}{Left up point coordinates.}

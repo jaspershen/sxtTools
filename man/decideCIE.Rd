@@ -4,8 +4,14 @@
 \alias{decideCIE}
 \title{decideCIE}
 \usage{
-decideCIE(id1, id2, top1 = 1, top2 = 3, id.type = c("kegg", "hmdb",
-  "cas"), library = NULL)
+decideCIE(
+  id1,
+  id2,
+  top1 = 1,
+  top2 = 3,
+  id.type = c("kegg", "hmdb", "cas"),
+  library = NULL
+)
 }
 \arguments{
 \item{id1}{Standard IDs.}

@@ -4,11 +4,22 @@
 \alias{ms2Plot2}
 \title{ms2Plot2}
 \usage{
-ms2Plot2(spectrum1, spectrum2, range.mz, ppm.tol = 30,
-  mz.ppm.thr = 400, xlab = "Mass to charge ratio (m/z)",
-  ylab = "Relative intensity", col1 = "red", col2 = "black",
-  title.size = 15, lab.size = 15, axis.text.size = 15,
-  legend.title.size = 15, legend.text.size = 15)
+ms2Plot2(
+  spectrum1,
+  spectrum2,
+  range.mz,
+  ppm.tol = 30,
+  mz.ppm.thr = 400,
+  xlab = "Mass to charge ratio (m/z)",
+  ylab = "Relative intensity",
+  col1 = "red",
+  col2 = "black",
+  title.size = 15,
+  lab.size = 15,
+  axis.text.size = 15,
+  legend.title.size = 15,
+  legend.text.size = 15
+)
 }
 \arguments{
 \item{spectrum1}{Spectrum 1.}

@@ -4,13 +4,26 @@
 \alias{sxtVolcanoPlot}
 \title{sxtVolcanoPlot}
 \usage{
-sxtVolcanoPlot(p.value, fc, p.cutoff = 0.05, fc.cutoff = 2,
-  linetype = c("3", "2", "1"), xlab = "log2(Fold change)",
-  ylab = "-log10(P-value, FDR)", title = "Volcano plot",
-  legend.title = "Marker", legend.label = c("Yes", "No"),
-  point.color = c("#F8766D", "#619CFF"), alpha = 0.9, lab.size = 12,
-  axis.text.size = 12, title.size = 15, legend.title.size = 12,
-  legend.text.size = 10, ...)
+sxtVolcanoPlot(
+  p.value,
+  fc,
+  p.cutoff = 0.05,
+  fc.cutoff = 2,
+  linetype = c("3", "2", "1"),
+  xlab = "log2(Fold change)",
+  ylab = "-log10(P-value, FDR)",
+  title = "Volcano plot",
+  legend.title = "Marker",
+  legend.label = c("Yes", "No"),
+  point.color = c("#F8766D", "#619CFF"),
+  alpha = 0.9,
+  lab.size = 12,
+  axis.text.size = 12,
+  title.size = 15,
+  legend.title.size = 12,
+  legend.text.size = 10,
+  ...
+)
 }
 \arguments{
 \item{p.value}{A numeric vector for p values.}

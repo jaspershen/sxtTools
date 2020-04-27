@@ -4,30 +4,31 @@
 \alias{getWorklist}
 \title{getWorklist}
 \usage{
-getWorklist(table.name = "batch1.xlsx", instrument = c("Thermo",
-  "Agilent", "AB"), each.mode.number = 30, randommethod = c("no",
-  "position", "injection"), samplenumber = NULL, replication = 1,
-  QCstep = 8, conditionQCnumber = 5, qc.index.from = 1,
+getWorklist(
+  table.name = "batch1.xlsx",
+  instrument = c("Thermo", "Agilent", "AB"),
+  each.mode.number = 30,
+  randommethod = c("no", "position", "injection"),
+  samplenumber = NULL,
+  replication = 1,
+  QCstep = 8,
+  conditionQCnumber = 5,
+  qc.index.from = 1,
   dir = "D:\\\\Liang\\\\SmarD_Urine_20190731\\\\RPLC\\\\",
   method.path = "D:\\\\Liang\\\\Methods\\\\RPLC\\\\Urine\\\\",
   ms1.method.pos = "Hypersil_GOLD_MS_pos",
   ms1.method.neg = "Hypersil_GOLD_MS_neg",
   ms2.method.pos = c("Hypersil_GOLD_MSMS_pos_NCE25_70_250",
-  "Hypersil_GOLD_MSMS_pos_NCE25_240_400",
-  "Hypersil_GOLD_MSMS_pos_NCE25_390_600",
-  "Hypersil_GOLD_MSMS_pos_NCE25_590_1000",
-  "Hypersil_GOLD_MSMS_pos_NCE50_70_250",
-  "Hypersil_GOLD_MSMS_pos_NCE50_240_400",
-  "Hypersil_GOLD_MSMS_pos_NCE50_390_600",
-  "Hypersil_GOLD_MSMS_pos_NCE50_590_1000"),
+    "Hypersil_GOLD_MSMS_pos_NCE25_240_400", "Hypersil_GOLD_MSMS_pos_NCE25_390_600",
+    "Hypersil_GOLD_MSMS_pos_NCE25_590_1000", "Hypersil_GOLD_MSMS_pos_NCE50_70_250",
+    "Hypersil_GOLD_MSMS_pos_NCE50_240_400", "Hypersil_GOLD_MSMS_pos_NCE50_390_600",
+    "Hypersil_GOLD_MSMS_pos_NCE50_590_1000"),
   ms2.method.neg = c("Hypersil_GOLD_MSMS_neg_NCE25_70_250",
-  "Hypersil_GOLD_MSMS_neg_NCE25_240_400",
-  "Hypersil_GOLD_MSMS_neg_NCE25_390_600",
-  "Hypersil_GOLD_MSMS_neg_NCE25_590_1000",
-  "Hypersil_GOLD_MSMS_neg_NCE50_70_250",
-  "Hypersil_GOLD_MSMS_neg_NCE50_240_400",
-  "Hypersil_GOLD_MSMS_neg_NCE50_390_600",
-  "Hypersil_GOLD_MSMS_neg_NCE50_590_1000"))
+    "Hypersil_GOLD_MSMS_neg_NCE25_240_400", "Hypersil_GOLD_MSMS_neg_NCE25_390_600",
+    "Hypersil_GOLD_MSMS_neg_NCE25_590_1000", "Hypersil_GOLD_MSMS_neg_NCE50_70_250",
+    "Hypersil_GOLD_MSMS_neg_NCE50_240_400", "Hypersil_GOLD_MSMS_neg_NCE50_390_600",
+    "Hypersil_GOLD_MSMS_neg_NCE50_590_1000")
+)
 }
 \arguments{
 \item{instrument}{Which instrument you use?
